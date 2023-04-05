@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
@@ -13,22 +12,11 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-				<nav style={{display:"flex", alignItems:'center', justifyContent:'center', flexDirection: 'column'}}>
-	        <h1 className={styles.title}>
-	          Hunting Coders
-	        </h1>
-					<ul style={{display:"flex", alignItems:'center', justifyContent:'center'}}>
-						<li className={styles.lists}>Home</li>
-						<li className={styles.lists}>About</li>
-						<li className={styles.lists}>Contact</li>
-					</ul>
-				</nav>
-
         <p className={styles.description}>
           Blog for coders by a Coder
         </p>
 
-				<h1>PopularBlogs</h1>
+				<h1>Latest Blogs</h1>
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>
@@ -59,20 +47,6 @@ const Home: NextPage = () => {
           </a>
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="/__repl"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Built on
-          <span className={styles.logo}>
-            <Image src="/replit.svg" alt="Replit Logo" width={20} height={18} />
-          </span>
-          Replit
-        </a>
-      </footer>
     </div>
   )
 }
