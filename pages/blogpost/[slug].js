@@ -5,7 +5,11 @@ const slug = () => {
   const router = useRouter();
   const {slug} = router.query;
   return (
-    <div>{slug}</div>
+		<>
+    <h1 style={{fontSize: 'xx-large', font: 'bolder'}}>{slug}</h1>
+		<hr></hr>
+		<p styles={{fontSize: 'x-large'}}>ojndjkdklkkmjmklld;pldllldldldl &rarr;</p>
+		</>
   )
 }
 

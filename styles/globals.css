@@ -45,3 +45,11 @@ a {
 .description {
   text-align: center;
 }
+
+.Navbar {
+	border-bottom: solid black 2px;
+	display:"flex";
+	align-items:'center';
+	justify-content:'center';
+	flex-direction: 'column'
+}
