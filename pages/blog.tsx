@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import styles from '../styles/Blog.module.css'
 
 
 const Blog = () => {
+	const [blogs, setBlogs] = useState([]);
+
+	useEffect(() => {
+	  console.log("useEffect is running!");
+	  fetch('/api/blogs').then((a)=>{ return a.json() }).then((parsed)=>{setBlogs(parsed); console.log(parsed)})
+	}, [0])
+	
+
 	return <>
 		<main className={styles.main}>
 		<h1>Latest Blogs</h1>
