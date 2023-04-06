@@ -6,6 +6,9 @@ type Data = {
   name: string
 }
 
-export default function handler( req: NextApiRequest, res: NextApiResponse<Data> ) {
-      res.status(200).json({ name: "Jhon Doe" })
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  fs.readdir('blogdata', (err, data) => {
+    console.log(data)
+    res.status(200).json(data)
+  })
 }
