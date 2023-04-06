@@ -17,3 +17,4 @@ export default function handler( req: NextApiRequest, res: NextApiResponse ) {
     }
   })
 }
+// http://127.0.0.1:3000/api/getblog?slug=flask
