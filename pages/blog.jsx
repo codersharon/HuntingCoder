@@ -2,20 +2,13 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "../styles/Blog.module.css";
 
-const Blog = () => {
-  const [blogs, setBlogs] = useState([]);
+const Blog = (props) => {
+  console.log(props);
+  const [blogs, setBlogs] = useState(props.data);
 
-  useEffect(() => {
-    console.log("useEffect is running!");
-    fetch("/api/blogs")
-      .then((a) => {
-        return a.json();
-      })
-      .then((parsed) => {
-        setBlogs(parsed);
-        console.log(parsed);
-      });
-  }, [0]);
+  // useEffect(() => {
+
+  // }, [0]);
 
   return (
     <>
@@ -25,7 +18,7 @@ const Blog = () => {
           {blogs.map((blogitem) => {
             const slug = blogitem.title;
             return (
-              <div key={slug}>
+              <div key={slug} style={{cursor: "pointer"}}>
                 <Link
                   href={`http://127.0.0.1:3000/blogpost/${slug.replace(
                     / /g,
@@ -45,5 +38,15 @@ const Blog = () => {
     </>
   );
 };
+
+export async function getServerSideProps(context) {
+  const response = await fetch("http://127.0.0.1:3000/api/blogs");
+  const data = await response.json()
+  
+
+  return {
+    props: {data}
+  }
+}
 
 export default Blog;
